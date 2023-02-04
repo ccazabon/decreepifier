@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "name": "Decreepifier",
+  "description": "Prevent creepy pages/apps from spying on what you are focusing your attention on.",
+  "version": "0.9",
+  "author": "Charles Cazabon",
+  "homepage_url": "https://github.com/ccazabon/decreepifier",
+
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "tabs"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "background": {
+    "service_worker": "setup-decreepifier.js"
+  }
+}

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script type="application/javascript">
+    </script>
+    <style>
+    </style>
+</head>
+<body>
+
+<p id="before">Before.</p>
+
+<pre id="focus">
+Focus tracking here.
+</pre>
+
+<p id="after">After.</p>
+
+<pre id="vis_window">
+Window visibility detector here.
+</pre>
+
+<hr/>
+
+<pre id="vis_document">
+Document visibility detector here.
+</pre>
+
+<p id="empty"></p>
+
+<script type="application/javascript">
+    const focus = document.getElementById('focus');
+    const vis_window = document.getElementById('vis_window');
+    const vis_document = document.getElementById('vis_document');
+
+    function pause() {
+      focus.textContent += '\nFocus lost.';
+    }
+    function play() {
+      focus.textContent += '\nRegained focus.';
+    }
+    window.addEventListener('blur', pause);
+    window.addEventListener('focus', play);
+
+    let events_window = 0;
+    let events_document = 0;
+
+    function vis_window_event(event) {
+      console.log("creeping page received window visibility event", event);
+      vis_window.textContent += "\nWindow vis event " + events_window;
+      events_window +=1;
+    }
+    window.addEventListener('visibilitychange', vis_window_event);
+
+    function vis_document_event(event) {
+      console.log("creeping page received document visibility event", event);
+      vis_document.textContent += "\nDocument vis event " + events_document;
+      events_document +=1;
+    }
+    window.document.addEventListener('visibilitychange', vis_window_event);
+
+</script>
+</body>
+</html>
