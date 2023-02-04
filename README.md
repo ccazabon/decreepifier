@@ -25,10 +25,10 @@ surveillance in some apps that I happen to use a Blink-based browser (Vivaldi)
 for, so I haven't implemented a manifest v2 version for Firefox compatibility.  
 I may do so at some point.
 
-{::comment}
+<!--
 If I ever do create a version for Firefox, I'll add this:
 This should be installable from [this extension's Mozilla add-ons page](https://addons.mozilla.org/en-US/firefox/addon/EXTENSION_NAME/) .
-{:/comment}
+-->
 
 #### Chrome, Vivaldi, Brave, Opera and other browsers
 
